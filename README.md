@@ -78,6 +78,36 @@ npm run dev
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/api/health
 
+## 🌐 Deploy
+
+### Frontend (GitHub Pages)
+
+- Publicação automática na URL: `https://nonatoslv.github.io/balance/`
+- Workflow em `.github/workflows/deploy-pages.yml`
+- Configure o segredo `VITE_API_URL` (Settings → Secrets and variables → Actions) com a URL pública da API.
+
+### Backend (Render) – recomendado
+
+- Deploy com disco persistente (SQLite) e health check pronto.
+- Use o botão abaixo para criar o serviço a partir deste repositório:
+
+[`Deploy to Render`](https://render.com/deploy?repo=https://github.com/NonatoSlv/balance.git)
+
+Render cria o serviço com as seguintes variáveis:
+
+- `HOST=0.0.0.0`
+- `PORT=3001`
+- `NODE_ENV=production`
+- `DB_FILE=/var/data/balancepro.sqlite`
+- `CORS_ORIGINS=https://nonatoslv.github.io`
+- `JWT_SECRET` (crie como Secret no Render com nome `balancepro-jwt-secret`)
+
+Após o serviço estar online, copie a URL pública (ex.: `https://balancepro-api.onrender.com`) e defina no GitHub do repositório:
+
+- `VITE_API_URL=https://SUA_URL_DA_API`
+
+Reexecute o workflow de Pages para o frontend consumir a API.
+
 ## 👤 Usuário Padrão
 
 O sistema cria automaticamente um usuário administrador:
