@@ -95,10 +95,10 @@ export default function LoginPage() {
           </div>
           
           <div className="p-4 rounded-xl bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20">
-            <p className="text-sm text-brand-100">
-              "Desde que começamos a usar o BalancePro, nossa gestão financeira ficou muito mais organizada e eficiente."
-            </p>
-            <p className="text-xs text-brand-200 mt-2 font-medium">— Cliente Satisfeito</p>
+            <p className="text-sm text-black">
+               "Desde que começamos a usar o BalancePro, nossa gestão financeira ficou muito mais organizada e eficiente."
+             </p>
+            <p className="text-xs text-black/80 mt-2 font-medium">— Cliente Satisfeito</p>
           </div>
         </div>
       </div>
